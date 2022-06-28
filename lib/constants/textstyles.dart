@@ -12,6 +12,11 @@ class AppTextStyles{
     fontSize: 30,
     fontWeight: FontWeight.bold,
   );
+  static const kWhiteBold50 = TextStyle(
+    color: AppColors.white,
+    fontSize: 50,
+    fontWeight: FontWeight.bold,
+  );
   static const kBlackBold30 = TextStyle(
     color: AppColors.black,
     fontSize: 30,

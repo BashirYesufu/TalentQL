@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:talent_ql/screens/seven_screen.dart';
+import 'package:talent_ql/services/weather_service.dart';
 import '../components/app_scaffold.dart';
 import '../components/app_text.dart';
 import '../components/hourly_forecast_container.dart';
@@ -33,18 +34,25 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       AppText(text: 'Today'),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.wb_sunny_outlined, color: AppColors.gold, size: 70,),
-                          Text('22°', style: AppTextStyles.kWhiteBold30,)
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.wb_sunny_outlined, color: AppColors.gold, size: 70,),
+                            SizedBox(width: 10,),
+                            Text('22°', style: AppTextStyles.kWhiteBold50,)
+                          ],
+                        ),
                       ),
-                      Text('Sunny')
+                      Text('Sunny', style: AppTextStyles.kWhite14,)
                     ],
                   ),
                 ),
                 SizedBox(height: 100,),
+                TextButton(onPressed: ()async{
+                  await WeatherService().getCurrentWeather();
+                }, child: Text('test'))
               ],
             ),
           ),
@@ -91,7 +99,6 @@ class HomeScreen extends StatelessWidget {
                   HourlyForecastContainer(),
                   HourlyForecastContainer(),
                   HourlyForecastContainer(),
-
                 ],
               ),
             ),
