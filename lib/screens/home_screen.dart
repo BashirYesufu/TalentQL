@@ -52,13 +52,16 @@ class HomeScreen extends StatelessWidget {
             margin: EdgeInsets.only(left: 30, bottom: 20),
             child: Row(
               children: [
-                Text('Today'),
-                Text('Tomorrow'),
+                AppText(text: 'Today', style: AppTextStyles.kGold14,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text('Tomorrow', style: AppTextStyles.kGold14,),
+                ),
                 InkWell(
                   onTap: ()=>Navigator.pushNamed(context, SevenDayScreen.screenID),
                   child: Row(
                     children: [
-                      Text('Next 7 Days'),
+                      Text('Next 7 Days', style: AppTextStyles.kGold14,),
                       Icon(Icons.arrow_forward_sharp)
                     ],
                   ),

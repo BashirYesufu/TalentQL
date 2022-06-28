@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:talent_ql/components/app_scaffold.dart';
 import 'package:talent_ql/constants/textstyles.dart';
-
 import '../components/seven_day_row.dart';
 
 class SevenDayScreen extends StatelessWidget {

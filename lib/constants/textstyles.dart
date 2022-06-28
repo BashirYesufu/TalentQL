@@ -21,4 +21,8 @@ class AppTextStyles{
     color: AppColors.white,
     fontSize: 14,
   );
+  static const kGold14= TextStyle(
+    color: AppColors.gold,
+    fontSize: 14,
+  );
 }
