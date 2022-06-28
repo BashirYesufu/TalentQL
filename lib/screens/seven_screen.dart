@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:talent_ql/components/app_scaffold.dart';
 import 'package:talent_ql/constants/textstyles.dart';
 
+import '../components/seven_day_row.dart';
+
 class SevenDayScreen extends StatelessWidget {
   const SevenDayScreen({Key? key}) : super(key: key);
   static const screenID = 'SevenDay';
@@ -21,20 +23,7 @@ class SevenDayScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Sunday'),
-                  Row(
-                    children: [
-                      Icon(Icons.thunderstorm),
-                      SizedBox(width: 30,),
-                      Text('12°')
-
-                    ],
-                  )
-                ],
-              )
+              SevenDayRow()
             ],
           ),
         )
