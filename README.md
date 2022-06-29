@@ -31,3 +31,15 @@ flutter pub get
 **Step 3:**
 
 Run your simulator for iOS or android emulator and smash the build button. Easy right? Leggo!
+
+## Screenshots of the app
+<table>
+ <tr>
+  <td>
+   <img align="center" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/TalentQL/main/demo/1.png" width="200" height="500" />
+  </td>
+  <td>
+    <img align="center" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/TalentQL/main/demo/2.png" width="200" height="500" />
+  </td>
+ </tr>
+</table>
