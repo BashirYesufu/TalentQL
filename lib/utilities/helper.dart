@@ -9,7 +9,7 @@ class Helper {
     } else if (condition < 400) {
       return Icon(WeatherIcons.day_rain, color: AppColors.grey,);
     } else if (condition < 600) {
-      return Icon(WeatherIcons.storm_showers, color: AppColors.grey, size: 40,);
+      return Icon(WeatherIcons.storm_showers, color: AppColors.grey,);
     } else if (condition < 700) {
       return Icon(WeatherIcons.snow, color: AppColors.white,);
     } else if (condition < 800) {
