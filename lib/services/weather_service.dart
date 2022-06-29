@@ -38,16 +38,19 @@ class WeatherService {
           lon: '${position.longitude}'));
       var jsonData = Map<String, dynamic>.from(json.decode(response.data.toString()));
       List<dynamic> data = jsonData['list'];
+      var index = 0;
       for (var weather in data){
-        DayWeather newWeather = DayWeather(
+        if(index == 0 || index % 8 == 0) {
+          DayWeather newWeather = DayWeather(
             weatherID: weather['weather'][0]['id'],
             currentWeather: weather['main']['temp'],
             weatherDescription: weather['weather'][0]['main'],
             date: weather['dt_txt'],
-        );
-        weathers.add(newWeather);
+          );
+          weathers.add(newWeather);
+        }
+        index ++;
       }
-      print(weathers.length);
       return weathers;
     } catch(e) {
       rethrow;

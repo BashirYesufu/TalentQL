@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:talent_ql/screens/seven_screen.dart';
-import 'package:talent_ql/services/weather_service.dart';
 import '../components/app_scaffold.dart';
 import '../components/app_text.dart';
 import '../components/hourly_forecast_container.dart';
@@ -8,6 +7,7 @@ import '../constants/colors.dart';
 import '../constants/textstyles.dart';
 import 'package:intl/intl.dart';
 import '../models/weather.dart';
+import '../utilities/helper.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -25,7 +25,11 @@ class HomeScreen extends StatelessWidget {
       trailing: [
         Padding(
           padding: const EdgeInsets.only(right: 20.0),
-          child: Icon(Icons.menu),
+          child: InkWell(
+            onTap: (){
+              Navigator.pushNamed(context, SevenDayScreen.screenID);
+            },
+              child: Icon(Icons.menu)),
         ),
       ],
       children: [
@@ -48,8 +52,9 @@ class HomeScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 10.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(Icons.wb_sunny_outlined, color: AppColors.gold, size: 70,),
+                            Helper.getWeatherIcon(weather.weatherId,),
                             SizedBox(width: 10,),
                             Text('${weather.currentWeather.ceil()}°', style: AppTextStyles.kWhiteBold50,)
                           ],
@@ -60,9 +65,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 100,),
-                TextButton(onPressed: ()async {
-                  await WeatherService().getFiveDayForecast();
-                }, child: Text('test'))
               ],
             ),
           ),
