@@ -36,10 +36,10 @@ Run your simulator for iOS or android emulator and smash the build button. Easy 
 <table>
  <tr>
   <td>
-   <img align="left" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/TalentQL/main/demo/1.png" width="400" height="600" />
+   <img align="left" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/TalentQL/main/demo/1.png" width="400" height="700" />
   </td>
   <td>
-    <img align="right" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/TalentQL/main/demo/2.png" width="400" height="600" />
+    <img align="right" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/TalentQL/main/demo/2.png" width="400" height="700" />
   </td>
  </tr>
 </table>
