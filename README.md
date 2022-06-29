@@ -17,7 +17,7 @@ https://fvm.app/
 Download or clone this repo by using the link below:
 
 ```
-https://github.com/BashirYesufu/apex.git
+https://github.com/BashirYesufu/TalentQL.git
 ```
 
 **Step 2:**
