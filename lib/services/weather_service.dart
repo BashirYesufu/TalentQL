@@ -43,7 +43,7 @@ class WeatherService {
         if(index == 0 || index % 8 == 0) {
           DayWeather newWeather = DayWeather(
             weatherID: weather['weather'][0]['id'],
-            currentWeather: weather['main']['temp'],
+            currentWeather: double.parse('${weather['main']['temp']}'),
             weatherDescription: weather['weather'][0]['main'],
             date: weather['dt_txt'],
           );
@@ -53,6 +53,7 @@ class WeatherService {
       }
       return weathers;
     } catch(e) {
+      print(e);
       rethrow;
     }
   }
