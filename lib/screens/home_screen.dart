@@ -9,18 +9,12 @@ import '../constants/textstyles.dart';
 import 'package:intl/intl.dart';
 import '../models/weather.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({
     required this.weather,
     Key? key}) : super(key: key);
   final Weather weather;
   static const screenID = 'Home';
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppText(text: 'London'),
-                AppText(text: 'United Kingdom'),
+                AppText(text: weather.cityName),
+                AppText(text: weather.country),
                 Text(DateFormat('EEEE, d MMM, yyyy').format(DateTime.now()), style: AppTextStyles.kWhite14,),
                 SizedBox(height: MediaQuery.of(context).size.height / 7,),
                 Center(
@@ -57,17 +51,17 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Icon(Icons.wb_sunny_outlined, color: AppColors.gold, size: 70,),
                             SizedBox(width: 10,),
-                            Text('22°', style: AppTextStyles.kWhiteBold50,)
+                            Text('${weather.currentWeather.ceil()}°', style: AppTextStyles.kWhiteBold50,)
                           ],
                         ),
                       ),
-                      Text('Sunny', style: AppTextStyles.kWhite14,)
+                      Text(weather.weatherDescription, style: AppTextStyles.kWhite14,)
                     ],
                   ),
                 ),
                 SizedBox(height: 100,),
-                TextButton(onPressed: ()async{
-                  await WeatherService().getCurrentWeather();
+                TextButton(onPressed: ()async {
+                  await WeatherService().getFiveDayForecast();
                 }, child: Text('test'))
               ],
             ),
