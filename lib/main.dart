@@ -11,6 +11,7 @@ class TalentQL extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: RouteHandler.initialRoute,
       routes: RouteHandler.routes,
+      onGenerateRoute: RouteHandler.generateRoute,
     );
   }
 }

@@ -1,5 +1,5 @@
 class Weather {
-  double weatherId;
+  int weatherId;
   String cityName, country, weatherDescription;
   double currentWeather;
 

@@ -6,12 +6,14 @@ class AppScaffold extends StatelessWidget {
   final Color appBarColor;
   final Color backgroundColor;
   final bool hasBackButton;
+  final List<Widget> trailing;
 
   const AppScaffold({
     required this.children,
     this.appBarColor = AppColors.white,
     this.backgroundColor = AppColors.white,
     this.hasBackButton = true,
+    this.trailing = const [],
     Key? key,
   }) : super(key: key);
 
@@ -35,6 +37,7 @@ class AppScaffold extends StatelessWidget {
               ),
             )
                 : SizedBox(),
+            actions: trailing,
           ),
           body: SafeArea(
             child: SingleChildScrollView(

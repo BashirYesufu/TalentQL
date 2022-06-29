@@ -7,10 +7,20 @@ import '../components/hourly_forecast_container.dart';
 import '../constants/colors.dart';
 import '../constants/textstyles.dart';
 import 'package:intl/intl.dart';
+import '../models/weather.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({
+    required this.weather,
+    Key? key}) : super(key: key);
+  final Weather weather;
   static const screenID = 'Home';
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +28,12 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: AppColors.blue,
       appBarColor: AppColors.blue,
       hasBackButton: false,
+      trailing: [
+        Padding(
+          padding: const EdgeInsets.only(right: 20.0),
+          child: Icon(Icons.menu),
+        ),
+      ],
       children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -70,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Text('Next 7 Days', style: AppTextStyles.kGold14,),
-                      Icon(Icons.arrow_forward_sharp)
+                      Icon(Icons.arrow_forward_sharp, color: AppColors.grey,)
                     ],
                   ),
                 ),
